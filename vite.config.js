@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import fs from "fs";
-import path from "path";
+import injectHTML from "vite-plugin-html-inject";
 
 // Get all HTML files in the root folder dynamically
 const htmlFiles = fs.readdirSync("./").filter((file) => file.endsWith(".html"));
@@ -16,4 +16,5 @@ export default defineConfig({
       input, // Dynamically include all HTML files
     },
   },
+  plugins: [injectHTML()]
 });

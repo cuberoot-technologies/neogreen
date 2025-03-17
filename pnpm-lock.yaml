@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      vite-plugin-html-inject:
+        specifier: ^1.1.2
+        version: 1.1.2
     devDependencies:
       fs-extra:
         specifier: ^11.3.0
@@ -310,6 +314,9 @@ packages:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
     engines: {node: '>= 10.0.0'}
 
+  vite-plugin-html-inject@1.1.2:
+    resolution: {integrity: sha512-4DWANEcAw73H5JLWTAI4EvXdSyoGqGq/Is9fTRjpF+SJLor58LNdqB+YYnK3FOLwx6LMTAn4z1hkiRyc52lYLg==}
+
   vite@6.2.1:
     resolution: {integrity: sha512-n2GnqDb6XPhlt9B8olZPrgMD/es/Nd1RdChF6CBD/fHW6pUyUTt2sQW2fPRX5GiD9XEa6+8A6A4f2vT6pSsE7Q==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
@@ -569,6 +576,8 @@ snapshots:
   source-map-js@1.2.1: {}
 
   universalify@2.0.1: {}
+
+  vite-plugin-html-inject@1.1.2: {}
 
   vite@6.2.1:
     dependencies:
