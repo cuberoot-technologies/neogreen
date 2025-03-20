@@ -96,6 +96,9 @@ html, body {
   .theme-btn.border-white {
     padding: 18px 32px;
   }
+  a.header-logo b{
+    font-size: 1.1rem !important;
+  }
 }
 @media (max-width: 575px) {
   .theme-btn.border-white {
@@ -7674,4 +7677,8 @@ height: 90px;
 }
 .project-content h4 a{
   color: #000 ;
+}
+
+.text-justify{
+  text-align: justify;
 }
