@@ -49,22 +49,14 @@
 
     <!--<< Breadcrumb Section Start >>-->
     <div
-    class="breadcrumb-wrapper bg-cover"
-    style="
-      background-image: url('/img/breadcrumb.jpg');
-    "
-  >
-    <div class="border-shape">
-      <img
-        src="/img/element.png"
-        alt="shape-img"
-      />
-    </div>
-    <div class="line-shape">
-      <img
-        src="/img/line.png"
-        alt="shape-img"
-      />
+      class="breadcrumb-wrapper bg-cover"
+      style="background-image: url('/img/breadcrumb.jpg')"
+    >
+      <div class="border-shape">
+        <img src="/img/element.png" alt="shape-img" />
+      </div>
+      <div class="line-shape">
+        <img src="/img/line.png" alt="shape-img" />
       </div>
       <div class="container">
         <div class="page-heading">
@@ -142,7 +134,9 @@
                     <div class="content">
                       <p>Make a Quote</p>
                       <h3>
-                        <a href="mailto:ceo@neogreentrade.com">ceo@neogreentrade.com</a>
+                        <a href="mailto:ceo@neogreentrade.com"
+                          >ceo@neogreentrade.com</a
+                        >
                       </h3>
                     </div>
                   </div>
@@ -171,7 +165,9 @@
                     </div>
                     <div class="content">
                       <p>Location</p>
-                      <h3>RR Plaza, Plot No. 1, Sec-19, Dwarka, New Delhi, 110075</h3>
+                      <h3>
+                        RR Plaza, Plot No. 1, Sec-19, Dwarka, New Delhi, 110075
+                      </h3>
                     </div>
                   </div>
                 </div>
@@ -194,12 +190,29 @@
                 <!-- <p>
                   We value your inquiries and feedback. Contact us for collaborations, partnerships, or questions about our services. Let’s work together for a sustainable future!
                 </p> -->
+
                 <form
-                  action=""
-                  id="contact-form"
+                  action="https://api.web3forms.com/submit"
                   method="POST"
+                  id="form"
                   class="contact-form-items"
                 >
+                  <input
+                    type="hidden"
+                    name="access_key"
+                    value="dc963018-16dd-431e-acd6-567423ed01f1"
+                  />
+                  <input
+                    type="hidden"
+                    name="subject"
+                    value="Contact form submission from neogreentrade website."
+                  />
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    id=""
+                    style="display: none"
+                  />
                   <div class="row g-4">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
                       <div class="form-clt">
@@ -238,6 +251,7 @@
                         Send Message
                         <i class="fa-solid fa-arrow-right-long"></i>
                       </button>
+                      <p id="result" class="text-secondary"></p>
                     </div>
                   </div>
                 </form>
@@ -252,7 +266,15 @@
     <div class="map-section">
       <div class="map-items">
         <div class="googpemap">
-            <iframe src="https://www.google.com/maps?z=15&output=embed&q=RR+Plaza,+Plot+No.+1,+Sec-19,+Dwarka,+New+Delhi,+110075" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe
+            src="https://www.google.com/maps?z=15&output=embed&q=RR+Plaza,+Plot+No.+1,+Sec-19,+Dwarka,+New+Delhi,+110075"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
     </div>
@@ -272,5 +294,53 @@
     <script src="js/wow.min.js"></script>
     <script src="js/main.js"></script>
     <script type="module" src="src/js/neogreen.js"></script>
+
+    <script>
+      const form = document.getElementById("form");
+      const result = document.getElementById("result");
+
+      form.addEventListener("submit", function (e) {
+        const formData = new FormData(form);
+        e.preventDefault();
+        var object = {};
+        formData.forEach((value, key) => {
+          object[key] = value;
+        });
+        var json = JSON.stringify(object);
+        result.innerHTML = "Please wait...";
+
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: json,
+        })
+          .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+              result.innerHTML = "Form submitted successfully !";
+              result.classList.remove("text-secondary");
+              result.classList.add("text-sucess");
+            } else {
+              console.log(response);
+              result.innerHTML = json.message;
+              result.classList.remove("text-secondary");
+              result.classList.add("text-danger");
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+            result.innerHTML = "Something went wrong!";
+          })
+          .then(function () {
+            form.reset();
+            setTimeout(() => {
+              result.style.display = "none";
+            }, 5000);
+          });
+      });
+    </script>
   </body>
 </html>
