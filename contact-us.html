@@ -191,70 +191,8 @@
                   We value your inquiries and feedback. Contact us for collaborations, partnerships, or questions about our services. Let’s work together for a sustainable future!
                 </p> -->
 
-                <form
-                  action="https://api.web3forms.com/submit"
-                  method="POST"
-                  id="form"
-                  class="contact-form-items"
-                >
-                  <input
-                    type="hidden"
-                    name="access_key"
-                    value="dc963018-16dd-431e-acd6-567423ed01f1"
-                  />
-                  <input
-                    type="hidden"
-                    name="subject"
-                    value="Contact form submission from neogreentrade website."
-                  />
-                  <input
-                    type="checkbox"
-                    name="botcheck"
-                    id=""
-                    style="display: none"
-                  />
-                  <div class="row g-4">
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
-                      <div class="form-clt">
-                        <span>Your name*</span>
-                        <input
-                          type="text"
-                          name="name"
-                          id="name"
-                          placeholder="Your Name"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
-                      <div class="form-clt">
-                        <span>Your Email*</span>
-                        <input
-                          type="text"
-                          name="email"
-                          id="email"
-                          placeholder="Your Email"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-lg-12 wow fadeInUp" data-wow-delay=".7s">
-                      <div class="form-clt">
-                        <span>Write Message*</span>
-                        <textarea
-                          name="message"
-                          id="message"
-                          placeholder="Write Message"
-                        ></textarea>
-                      </div>
-                    </div>
-                    <div class="col-lg-7 wow fadeInUp" data-wow-delay=".9s">
-                      <button type="submit" class="theme-btn">
-                        Send Message
-                        <i class="fa-solid fa-arrow-right-long"></i>
-                      </button>
-                      <p id="result" class="text-secondary"></p>
-                    </div>
-                  </div>
-                </form>
+    <load src="includes/form.html" />
+            
               </div>
             </div>
           </div>
@@ -295,52 +233,6 @@
     <script src="js/main.js"></script>
     <script type="module" src="src/js/neogreen.js"></script>
 
-    <script>
-      const form = document.getElementById("form");
-      const result = document.getElementById("result");
-
-      form.addEventListener("submit", function (e) {
-        const formData = new FormData(form);
-        e.preventDefault();
-        var object = {};
-        formData.forEach((value, key) => {
-          object[key] = value;
-        });
-        var json = JSON.stringify(object);
-        result.innerHTML = "Please wait...";
-
-        fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: json,
-        })
-          .then(async (response) => {
-            let json = await response.json();
-            if (response.status == 200) {
-              result.innerHTML = "Form submitted successfully !";
-              result.classList.remove("text-secondary");
-              result.classList.add("text-sucess");
-            } else {
-              console.log(response);
-              result.innerHTML = json.message;
-              result.classList.remove("text-secondary");
-              result.classList.add("text-danger");
-            }
-          })
-          .catch((error) => {
-            console.log(error);
-            result.innerHTML = "Something went wrong!";
-          })
-          .then(function () {
-            form.reset();
-            setTimeout(() => {
-              result.style.display = "none";
-            }, 5000);
-          });
-      });
-    </script>
+   
   </body>
 </html>
