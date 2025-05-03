@@ -477,21 +477,25 @@
         </div>
       </div>
     </section>
-  <div class="enq">
-    <div class="header-button mt-4">
-      <a class="theme-btn text-center" href="#popup1">
-        <span>Enquire Now</i></span>
-      </a>
+    <div class="enq">
+      <div class="header-button mt-4">
+        <button type="button" class="theme-btn text-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Enquire Now
+        </button>
+      </div>
     </div>
-  </div>
-  <div id="popup1" class="popup-container">
-    <div class="popup-content">
-      <a href="#" class="close">&times;</a>
-      <h2 style="color: white; margin-bottom: 20px;">We'd Love to Hear From!</h2>
-
-      <load src="includes/form.html" />
+  
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h2 style="color: white; margin-bottom: 20px;">We'd Love to Hear From!</h2>
+  
+          <load src="includes/form.html" />
+  
+        </div>
+      </div>
     </div>
-  </div>
   <!--<< Footer Section Start >>-->
   <load src="includes/footer.html" />
 

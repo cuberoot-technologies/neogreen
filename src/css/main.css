@@ -1000,7 +1000,7 @@ span {
 
 .contact-form-items .form-clt span {
   color: var(--white);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   display: inline-block;
 }
 .contact-form-items .form-clt input, .contact-form-items .form-clt textarea {
@@ -6207,7 +6207,7 @@ input.main-search-input::placeholder {
   position: relative;
   z-index: 99;
   margin-bottom: 30px;
-  margin-top: -7px;
+  /* margin-top: -7px; */
 }
 @media (max-width: 767px) {
   .section-title {
@@ -6277,10 +6277,10 @@ input.main-search-input::placeholder {
 }
 
 .service-wrapper {
-  margin-bottom: 187px;
+  margin-bottom: 80px;
 }
 .service-wrapper .service-text {
-  margin-top: 50px;
+  margin-top: 20px;
   text-align: center;
 }
 .service-wrapper .service-text h6 {
@@ -7864,4 +7864,16 @@ transform: skewY(0deg);
 
 .highlighted p {
   color: white;
+}
+
+.modal-content{
+  background-color: #198754e3 !important;
+  padding: 20px !important;
+}
+
+button.btn-close{
+  color: #fff !important;
+  float: right;
+  position: absolute;
+  right: 15px;
 }
