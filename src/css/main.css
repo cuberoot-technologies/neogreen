@@ -33,7 +33,7 @@ html, body {
   right: 0;
 }
 .theme-btn {
-  background-color: var(--theme);
+  background-color: #367b41;
   color: var(--white);
   display: inline-block;
   font-size: 16px;
@@ -7823,4 +7823,45 @@ transform: skewY(180deg);
 .popup-style-7:target{
 transform: skewY(0deg);
 
+}
+
+/* new changes******************* 02-05-2025 */
+
+
+.mission-section {
+  background-color: #1d8f2c; /* dark green */
+  color: white;
+  padding: 60px 0;
+}
+
+.mission-card {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 30px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.mission-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.mission-card:hover {
+  background-color: #1d1d1d;
+  border: none;
+  color: white;
+}
+
+.highlighted .mission-icon {
+  color: white;
+}
+
+.highlighted p {
+  color: white;
 }

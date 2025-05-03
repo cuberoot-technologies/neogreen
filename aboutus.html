@@ -1,250 +1,513 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NeoGreen Trade LLP</title>
-    <!--<< Favicon >>-->
-    <link
-      rel="shortcut icon"
-      href="https://spontaneous-scone-bcee1b.netlify.app/assets/img/favicon.svg"
-    />
-    <!-- << Bootstrap >> -->
-    <link
-      rel="stylesheet"
-      href=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css"
-    />
-  </head>
 
-  <body>
-    <!-- Preloader Start -->
-    <div id="preloader" class="preloader">
-      <div class="animation-preloader">
-        <div class="spinner"></div>
-        <div class="txt-loading">
-          <span data-text-preloader="N" class="letters-loading">N</span>
-          <span data-text-preloader="E" class="letters-loading">E</span>
-          <span data-text-preloader="O" class="letters-loading">O</span>
-          <span data-text-preloader="G" class="letters-loading">G</span>
-          <span data-text-preloader="R" class="letters-loading">R</span>
-          <span data-text-preloader="E" class="letters-loading">E</span>
-          <span data-text-preloader="E" class="letters-loading">E</span>
-          <span data-text-preloader="N" class="letters-loading">N</span>
-        </div>
-        <p class="text-center">Loading</p>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeoGreen Trade LLP</title>
+  <!--<< Favicon >>-->
+  <link rel="shortcut icon" href="https://spontaneous-scone-bcee1b.netlify.app/assets/img/favicon.svg" />
+  <!-- << Bootstrap >> -->
+  <link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css" />
+</head>
+<style>
+
+.green-card-box {
+    background-color: #f2fff5;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(40, 167, 69, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .sustain-section {
+    padding: 60px 0;
+  }
+
+  .sustain-title {
+    color: #28a745;
+    font-weight: 700;
+    font-size: 2.5rem;
+  }
+
+  .sustain-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+
+  .sustain-card {
+    background-color: #ffffff;
+    border: 2px solid #d6f5d6;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(40, 167, 69, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .sustain-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(40, 167, 69, 0.2);
+  }
+
+  .sustain-icon {
+    font-size: 2.5rem;
+    color: #28a745;
+    margin-bottom: 20px;
+  }
+
+  .sustain-card-text {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+  }
+  .green-card-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(40, 167, 69, 0.2);
+  }
+
+  .green-card-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+  }
+
+  .green-card-body {
+    padding: 1.5rem;
+  }
+
+  .green-card-title {
+    font-size: 1.5rem;
+    color: #28a745;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .green-card-text {
+    font-size: 1rem;
+    color: #444;
+  }
+
+  @media (max-width: 576px) {
+    .green-card-img {
+      height: 180px;
+    }
+  }
+  .green-card {
+    border-left: 5px solid #28a745;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f6fff9;
+  }
+
+  .green-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(40, 167, 69, 0.3);
+  }
+
+  .green-icon {
+    color: #28a745;
+    font-size: 1.8rem;
+    margin-right: 10px;
+  }
+
+  .section-heading {
+    color: #28a745;
+  }
+
+  .green-bullet {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .green-bullet li::before {
+    content: "✔";
+    color: #28a745;
+    font-weight: bold;
+    margin-right: 8px;
+  }
+</style>
+<body>
+  <!-- Preloader Start -->
+  <div id="preloader" class="preloader">
+    <div class="animation-preloader">
+      <div class="spinner"></div>
+      <div class="txt-loading">
+        <span data-text-preloader="N" class="letters-loading">N</span>
+        <span data-text-preloader="E" class="letters-loading">E</span>
+        <span data-text-preloader="O" class="letters-loading">O</span>
+        <span data-text-preloader="G" class="letters-loading">G</span>
+        <span data-text-preloader="R" class="letters-loading">R</span>
+        <span data-text-preloader="E" class="letters-loading">E</span>
+        <span data-text-preloader="E" class="letters-loading">E</span>
+        <span data-text-preloader="N" class="letters-loading">N</span>
       </div>
-      <div class="loader">
-        <div class="row">
-          <div class="col-3 loader-section section-left">
-            <div class="bg"></div>
-          </div>
-          <div class="col-3 loader-section section-left">
-            <div class="bg"></div>
-          </div>
-          <div class="col-3 loader-section section-right">
-            <div class="bg"></div>
-          </div>
-          <div class="col-3 loader-section section-right">
-            <div class="bg"></div>
-          </div>
+      <p class="text-center">Loading</p>
+    </div>
+    <div class="loader">
+      <div class="row">
+        <div class="col-3 loader-section section-left">
+          <div class="bg"></div>
+        </div>
+        <div class="col-3 loader-section section-left">
+          <div class="bg"></div>
+        </div>
+        <div class="col-3 loader-section section-right">
+          <div class="bg"></div>
+        </div>
+        <div class="col-3 loader-section section-right">
+          <div class="bg"></div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!--<< Mouse Cursor Start >>-->
-    <div class="mouse-cursor cursor-outer"></div>
-    <div class="mouse-cursor cursor-inner"></div>
+  <!--<< Mouse Cursor Start >>-->
+  <div class="mouse-cursor cursor-outer"></div>
+  <div class="mouse-cursor cursor-inner"></div>
 
-    <div class="offcanvas__overlay"></div>
+  <div class="offcanvas__overlay"></div>
 
-    <load src="includes/header.html" />
+  <load src="includes/header.html" />
 
-    <!--<< Breadcrumb Section Start >>-->
-    <div
-      class="breadcrumb-wrapper bg-cover"
-      style="background-image: url('/img/breadcrumb.jpg')"
-    >
-      <div class="border-shape">
-        <img src="/img/element.png" alt="shape-img" />
-      </div>
-      <div class="line-shape">
-        <img src="/img/line.png" alt="shape-img" />
-      </div>
-      <div class="container">
-        <div class="page-heading">
-          <h1 class="wow fadeInUp" data-wow-delay=".3s">About Us</h1>
-          <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-            <li>
-              <a href="/"> Home </a>
-            </li>
-            <li>
-              <i class="fas fa-chevron-right"></i>
-            </li>
-            <li>About Us</li>
-          </ul>
-        </div>
+  <!--<< Breadcrumb Section Start >>-->
+  <div class="breadcrumb-wrapper bg-cover" style="background-image: url('/img/breadcrumb.jpg')">
+    <div class="border-shape">
+      <img src="/img/element.png" alt="shape-img" />
+    </div>
+    <div class="line-shape">
+      <img src="/img/line.png" alt="shape-img" />
+    </div>
+    <div class="container">
+      <div class="page-heading">
+        <h1 class="wow fadeInUp" data-wow-delay=".3s">About Us</h1>
+        <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
+          <li>
+            <a href="/"> Home </a>
+          </li>
+          <li>
+            <i class="fas fa-chevron-right"></i>
+          </li>
+          <li>About Us</li>
+        </ul>
       </div>
     </div>
+  </div>
 
-    <!-- Service Details Section Start -->
-    <section class="service-details-section fix section-padding">
-      <div class="container">
-        <div class="service-details-wrapper">
-          <div class="row g-4">
-            <div class="col-12 col-lg-4 order-2 order-md-1">
-              <div class="main-sidebar"></div>
-            </div>
-            <div class="col-12 col-lg-12 order-1 order-md-2">
-              <div class="service-details-items">
-                <!-- <div class="details-image">
+  <!-- Service Details Section Start -->
+  <section class="service-details-section fix section-padding pb-5 pt-0 ">
+    <div class="container">
+      <div class="service-details-wrapper">
+        <div class="row g-4">
+          <div class="col-12 col-lg-4 order-2 order-md-1">
+            <div class="main-sidebar"></div>
+          </div>
+          <div class="col-12 col-lg-12 order-1 order-md-2">
+            <div class="service-details-items">
+              <!-- <div class="details-image">
                                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjTMEOp1Xo9PIWBMG9JwGNJeCp0hbXbZH1zg&s" alt="img">
                                 </div> -->
-                <div class="details-content text-justify">
-                  <p class="mt-3 text-justify">
-                    Neo Green Trade LLP is a dynamic and progressive enterprise
-                    in the international commodities trading market, with a
-                    focus on sustainability and innovation. Driven by
-                    cutting-edge technology, we bring together the best of
-                    sustainability and innovation in the world of international
-                    trade. Our core operations encompass trading in carbon
-                    credits, green energy solutions, and solar and hydrogen
-                    technologies, as well as the distribution of solar cook
-                    stoves. We are also engaged in the marketing of a wide range
-                    of goods, the import and export of diverse agro products,
-                    minerals, fuel trade, and IT services.
-                  </p>
-                  <p class="mt-3 text-justify">
-                    Neo Green Trade LLP is a dynamic and progressive enterprise
-                    in the international commodities trading market, with a
-                    focus on sustainability and innovation. Driven by
-                    cutting-edge technology, we bring together the best of
-                    sustainability and innovation in the world of international
-                    trade. Our core operations encompass trading in carbon
-                    credits, green energy solutions, and solar and hydrogen
-                    technologies, as well as the distribution of solar cook
-                    stoves. We are also engaged in the marketing of a wide range
-                    of goods, the import and export of diverse agro products,
-                    minerals, fuel trade, and IT services.
-                  </p>
-                  <p class="mt-3 text-justify">
-                    Neo Green Trade LLP is a dynamic and progressive enterprise
-                    in the international commodities trading market, with a
-                    focus on sustainability and innovation. Driven by
-                    cutting-edge technology, we bring together the best of
-                    sustainability and innovation in the world of international
-                    trade. Our core operations encompass trading in carbon
-                    credits, green energy solutions, and solar and hydrogen
-                    technologies, as well as the distribution of solar cook
-                    stoves. We are also engaged in the marketing of a wide range
-                    of goods, the import and export of diverse agro products,
-                    minerals, fuel trade, and IT services.
-                  </p>
+              <div class="details-content text-justify">
+                <p class="mt-3 text-justify">
+                  Neo Green Trade LLP is a dynamic and progressive enterprise
+                  in the international commodities trading market, with a
+                  focus on sustainability and innovation. Driven by
+                  cutting-edge technology, we bring together the best of
+                  sustainability and innovation in the world of international
+                  trade. Our core operations encompass trading in carbon
+                  credits, green energy solutions, and solar and hydrogen
+                  technologies, as well as the distribution of solar cook
+                  stoves. We are also engaged in the marketing of a wide range
+                  of goods, the import and export of diverse agro products,
+                  minerals, fuel trade, and IT services.
+                </p>
+               
+              </div>
+
+              <div class="row pt-5 align-items-center">
+                <!-- Image Section -->
+                <div class="col-md-6 col-12 mb-3 text-center">
+                  <img src="/img/vision.jpg" alt="img" width="100%" class="img-fluid rounded" />
                 </div>
 
-                <div class="row pt-5 align-items-center">
-                  <!-- Image Section -->
-                  <div class="col-md-6 col-12 mb-3 text-center">
-                    <img
-                      src="/img/vision.jpg"
-                      alt="img"
-                      width="100%"
-                      class="img-fluid rounded"
-                    />
-                  </div>
-
-                  <!-- Text Section -->
-                  <div class="col-md-6 col-12">
-                    <h3>Our Vision</h3>
-                    <p class="mt-3 text-justify">
-                      We aim to lead the global transition towards a sustainable
-                      and green economy by promoting eco-friendly commodities
-                      and innovative technologies. We envision a world driven by
-                      sustainable growth. At Neo Green Trade LLP, we aim to
-                      emerge as a lead player in international green trade while
-                      fostering growth for our partners, customers, and
-                      communities.
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class="row d-flex flex-column flex-md-row-reverse align-items-center pt-5"
-                >
-                  <!-- Image Section (Appears First on Desktop, Second on Mobile) -->
-                  <div class="col-md-6 col-12 mb-3 text-center">
-                    <img
-                      src="/img/mission.jpg"
-                      alt="img"
-                      width="100%"
-                      class="img-fluid rounded"
-                    />
-                  </div>
-
-                  <!-- Text Section -->
-                  <div class="col-md-6 col-12">
-                    <h3>Our Mission</h3>
-                    <p class="mt-3 text-justify">
-                      Our mission is to provide high-quality, sustainable
-                      products and services that meet the evolving needs of our
-                      global partners while contributing positively to the
-                      environment and society. We are committed to drive the
-                      global shift towards sustainable growth through our
-                      expertise in carbon markets, renewable energy, and
-                      next-generation technologies. We are committed to lead by
-                      example and to create lasting positive change for a
-                      greener future.
-                    </p>
-                  </div>
+                <!-- Text Section -->
+                <div class="col-md-6 col-12">
+                  <h3>Our Vision</h3>
+                  <p class="mt-3 text-justify">
+                    We aim to lead the global transition towards a sustainable
+                    and green economy by promoting eco-friendly commodities
+                    and innovative technologies. We envision a world driven by
+                    sustainable growth. At Neo Green Trade LLP, we aim to
+                    emerge as a lead player in international green trade while
+                    fostering growth for our partners, customers, and
+                    communities.
+                  </p>
                 </div>
               </div>
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- Image Section (Appears First on Desktop, Second on Mobile) -->
+
+
+    <!-- Text Section -->
+    <section class="mission-section">
+      <div class="container">
+        <div class="text-center mb-3">
+          <h2 class="fw-bold">Mission</h2>
+          <p class="fs-5">To deliver high-quality, sustainable products and services that adapt to <br> the
+            evolving needs of our global partners while making a meaningful impact on the environment and
+            society.</p>
+
+            <h5 class="text-start mt-5">We are committed to:</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="mission-card highlighted text-white">
+              <div class="mission-icon"><i class="fas fa-award"></i></div>
+              <h5 class="fw-bold">Delivering Excellence</h5>
+              <p>
+                Providing reliable, innovative, and personalized solutions to our global partners.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="mission-card text-white">
+              <div class="mission-icon"><i class="fas fa-leaf"></i></div>
+              <h5 class="fw-bold">Championing Sustainability</h5>
+              <p>
+                Embedding eco-conscious practices throughout our operations to help build a healthier
+                planet.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="mission-card text-white">
+              <div class="mission-icon"><i class="fas fa-users"></i></div>
+              <h5 class="fw-bold">Empowering Communities</h5>
+              <p>
+                Promoting ethical trade, inclusive growth, and social well-being across all our markets.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="mission-card text-white">
+              <div class="mission-icon"><i class="fas fa-bullseye"></i></div>
+              <h5 class="fw-bold">Leading with Purpose</h5>
+              <p>
+                Fostering transparency, collaboration, and long-term value through continuous improvement.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <div class="enq"><div class="header-button mt-4">
-      <a class="theme-btn text-center" href="#popup1">
-        <span
-          >Enquire Now</i
-        ></span>
-      </a>
-    </div></div>
-    <div id="popup1" class="popup-container">
-      <div class="popup-content">
-        <a href="#" class="close">&times;</a>
-        <h2 style="color: white; margin-bottom: 20px;">We'd Love to Hear From!</h2>
+
+    <section class="services-section py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold section-heading">Empowering a Greener Future</h2>
+          <p class="fs-5">Enhancing user experience with smart, sustainable, and efficient service offerings.</p>
+        </div>
     
-        <load src="includes/form.html" />
+        <div class="row g-4">
+          <!-- Commodities Trade Exchange -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="p-4 rounded green-card h-100">
+              <h5 class="fw-bold"><i class="fas fa-leaf green-icon"></i> Commodities Trade Exchange</h5>
+              <ul class="green-bullet">
+                <li>Carbon credit trading for climate goals</li>
+                <li>Renewable energy solutions (solar, wind, bio)</li>
+                <li>Waste to Energy conversion initiatives</li>
+              </ul>
+            </div>
+          </div>
+    
+          <!-- Trading & Distribution -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="p-4 rounded green-card h-100">
+              <h5 class="fw-bold"><i class="fas fa-exchange-alt green-icon"></i> Trading & Distribution</h5>
+              <ul class="green-bullet">
+                <li>Easy registration on NGT platform</li>
+                <li>Instant trading participation</li>
+                <li>Secure delivery and payments</li>
+              </ul>
+            </div>
+          </div>
+    
+          <!-- Carbon Neutral Products -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="p-4 rounded green-card h-100">
+              <h5 class="fw-bold"><i class="fas fa-tshirt green-icon"></i> Carbon Neutral Products</h5>
+              <p>Certified green textiles with backend support like storage, assaying, and logistics integration.</p>
+            </div>
+          </div>
+    
+          <!-- Green Services -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="p-4 rounded green-card h-100">
+              <h5 class="fw-bold"><i class="fas fa-recycle green-icon"></i> Green Services</h5>
+              <ul class="green-bullet">
+                <li>Eco trade in food, minerals, fuel</li>
+                <li>Support for pharmaceuticals & handloom</li>
+                <li>Clean cooking & aviation tech</li>
+              </ul>
+            </div>
+          </div>
+    
+          <!-- IT Services -->
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="500">
+            <div class="p-4 rounded green-card h-100 text-center">
+              <h5 class="fw-bold"><i class="fas fa-code green-icon"></i> IT Services</h5>
+              <p>Customized software and consulting for modern digital ecosystems.</p>
+            </div>
+          </div>
+    
+          <!-- Marketing Solutions -->
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="600">
+            <div class="p-4 rounded green-card h-100 text-center">
+              <h5 class="fw-bold"><i class="fas fa-bullhorn green-icon"></i> Marketing Solutions</h5>
+              <p>Brand storytelling, product strategy, and omnichannel marketing.</p>
+            </div>
+          </div>
+    
+          <!-- Networking -->
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="700">
+            <div class="p-4 rounded green-card h-100 text-center">
+              <h5 class="fw-bold"><i class="fas fa-network-wired green-icon"></i> Networking</h5>
+              <ul class="green-bullet text-start ps-3">
+                <li>Strong B2B connections</li>
+                <li>Referral-based lead growth</li>
+                <li>Etiquette & value-driven relationships</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission-section">
+    <div class="container py-5">
+      <div class="row g-4">
+    
+        <!-- Business Model Card -->
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="green-card-box h-100">
+            <img src="https://media.istockphoto.com/id/1254709312/photo/green-business-meeting-united-partners-team-with-hands-together-holding-plant-green-trusted.jpg?s=612x612&w=0&k=20&c=PvuDbzmZDa21J5muok2Dn1uHlBzDfwFBL3xfpg53QQA=" alt="Business Model" class="green-card-img">
+            <div class="green-card-body">
+              <h3 class="green-card-title">Business Model</h3>
+              <p class="green-card-text">
+                Neo Green Trade LLP operates with a flexible, collaborative model. By leveraging joint ventures,
+                strategic partnerships, and green supply chain management, we ensure operational efficiency across borders.
+                Our focus on green technology drives both profitability and planet-friendly outcomes.
+              </p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Market Approach Card -->
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="green-card-box h-100">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Market Approach" class="green-card-img">
+            <div class="green-card-body">
+              <h3 class="green-card-title">Market Approach</h3>
+              <p class="green-card-text">
+                We serve diverse markets across Europe, Asia, Africa, and the Americas. Our localized strategies and
+                customized solutions are designed to meet regional demands while upholding international sustainability
+                standards. We believe in building long-term client relationships that drive mutual growth and positive
+                environmental impact.
+              </p>
+            </div>
+          </div>
+        </div>
+    
       </div>
     </div>
-    <!--<< Footer Section Start >>-->
-    <load src="includes/footer.html" />
+  </section>
 
-    <!--<< All JS Plugins >>-->
-    <!-- JavaScript Files -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery.waypoints.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/swiper-bundle.min.js"></script>
-    <script src="js/jquery.meanmenu.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/main.js"></script>
-    <script type="module" src="src/js/neogreen.js"></script>
-  </body>
+    <section class="sustain-section text-center">
+      <div class="container">
+        <h2 class="sustain-title mb-3" data-aos="fade-down">Sustainability & Impact</h2>
+        <p class="sustain-subtitle" data-aos="fade-up" data-aos-delay="100">
+          Sustainability is not just a part of our business—it’s at the core of everything we do.
+        </p>
+    
+        <div class="row g-4 mt-4">
+    
+          <!-- Card 1 -->
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="sustain-card h-100">
+              <div class="sustain-icon"><i class="fas fa-leaf"></i></div>
+              <p class="sustain-card-text">
+                Through carbon credit trading and green energy initiatives, we help reduce global carbon emissions.
+              </p>
+            </div>
+          </div>
+    
+          <!-- Card 2 -->
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="250">
+            <div class="sustain-card h-100">
+              <div class="sustain-icon"><i class="fas fa-globe"></i></div>
+              <p class="sustain-card-text">
+                Aligned with the UN Sustainable Development Goals (SDGs), we promote eco-friendly practices across our operations.
+              </p>
+            </div>
+          </div>
+    
+          <!-- Card 3 -->
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="350">
+            <div class="sustain-card h-100">
+              <div class="sustain-icon"><i class="fas fa-balance-scale"></i></div>
+              <p class="sustain-card-text">
+                We strive to build a future that balances economic progress with environmental preservation.
+              </p>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </section>
+  <div class="enq">
+    <div class="header-button mt-4">
+      <a class="theme-btn text-center" href="#popup1">
+        <span>Enquire Now</i></span>
+      </a>
+    </div>
+  </div>
+  <div id="popup1" class="popup-container">
+    <div class="popup-content">
+      <a href="#" class="close">&times;</a>
+      <h2 style="color: white; margin-bottom: 20px;">We'd Love to Hear From!</h2>
+
+      <load src="includes/form.html" />
+    </div>
+  </div>
+  <!--<< Footer Section Start >>-->
+  <load src="includes/footer.html" />
+
+  <!--<< All JS Plugins >>-->
+  <!-- JavaScript Files -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.nice-select.min.js"></script>
+  <script src="js/jquery.waypoints.js"></script>
+  <script src="js/jquery.counterup.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/jquery.meanmenu.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/main.js"></script>
+  <script type="module" src="src/js/neogreen.js"></script>
+</body>
+
 </html>
