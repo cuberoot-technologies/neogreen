@@ -27,119 +27,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css"
     />
-    <style>
-      header
-{
-    position: relative;
-    max-width: 1400px;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin: 10px auto;
-    padding: 0px;
-    background: #FFF;
-    border-radius: 4px;
-}
-.logo
-{
-    float:left;
-    text-align: center;
-    line-height: 60px;
-    font-size: 36px;
-    padding: 0 20px;
-    color:#069370;
-    font-weight: 700;
-    text-decoration: none;
     
-}
-nav
-{
-    float:right;
-}
-.clear
-{
-    clear: both;
-}
-nav ul
-{
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-nav ul li
-{
-    list-style: none;
-}
-nav ul li a
-{
-    display: block;
-    margin: 10px 0;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #262626;
-}
-nav ul li a.active,
-nav ul li a:hover
-{
-    background: #069370;
-    color: #fff;
-    transition: 0.5s;
-}
-@media (max-width: 1200px)
-{
-    header
-    {
-        margin: 20px;
-    }
-}
-@media (max-width: 768px)
-{
-    .mean-toggle
-    {
-        display: block;
-        width: auto;
-        height: auto;
-        margin: 10px;
-        float: right;
-        width: 100%;
-        cursor: pointer;
-        text-align: center;
-        font-size: 30px;
-        color: #069370;
-    }
-    .mean-toggle:before
-    {
-        content: url('/img/icon.png');
-        font-family: fontAwesome;
-        line-height: 40px;
-    }
-    .mean-toggle.active:before
-    {
-        content: '\f00d';
-    }
-    nav
-    {
-        display:none;
-    }
-    nav.active
-    {
-        display:block;
-        width :100%;
-    }
-    nav.active ul
-    {
-        display: block;
-    }
-    nav.active ul li 
-    {
-        margin: 0;
-        text-align: center;
-    }
-}
-.d-flex.justify-content-between.align-items-center.header-sub{
-  width: 100%;
-}
-    </style>
   </head>
   <body>
     <!-- Preloader Start -->
@@ -188,8 +76,19 @@ nav ul li a:hover
             <div
               class="offcanvas__top mb-5 d-flex justify-content-between align-items-center"
             >
-            
-          
+              <div class="offcanvas__logo" >
+                <a href="/"><b style="color: #238e36;">NEOGREEN TRADE</b></a>
+              </div>
+              <div class="offcanvas__close">
+                <button>
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <p class="text d-none d-lg-block">
+              Driving sustainable trade with innovation, technology, and a
+              commitment to a greener future.
+            </p>
             <div class="mobile-menu fix mb-3"></div>
             <div class="offcanvas__contact">
               <h4>Contact Info</h4>
@@ -255,6 +154,7 @@ nav ul li a:hover
     <div class="offcanvas__overlay"></div>
 
     <!-- Header Section Start -->
+    <header>
       <div class="header-top-section fix">
         <div class="container-fluid">
           <div class="header-top-wrapper">
@@ -282,29 +182,58 @@ nav ul li a:hover
           </div>
         </div>
       </div>
-
-
-      <header >
-        <div class="d-flex justify-content-between align-items-center header-sub">
-        <a class="header-logo" href="/">
-          <img
-            src="/img/logo/logo_icon.png"
-            height="60"
-            alt="logo-img"
-          />
-          <b style="color: var(--theme)">NEOGREEN TRADE</b>
-        </a>
-        <div class="mean-toggle"></div>
+      <div id="header-sticky" class="header-1">
+        <div class="container-fluid">
+          <div class="mega-menu-wrapper">
+            <div class="header-main style-2">
+              <div class="header-left">
+                <div class="logo">
+                  <a class="header-logo" href="/">
+                    <img
+                      src="/img/logo/logo_icon.png"
+                      height="60"
+                      alt="logo-img"
+                    />
+                    <b style="color: var(--theme)">NEOGREEN TRADE</b>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="header-right d-flex justify-content-end align-items-center"
+              >
+                <div class="mean__menu-wrapper">
+                  <div class="main-menu">
+                    <nav id="mobile-menu">
+                      <ul>
+                        <li class="has-dropdown active menu-thumb">
+                          <a href="/"> Home </a>
+                        </li>
+                        <li><a href="/aboutus.html">About Us</a></li>
+                        <!-- <li><a href="/services"> Services</a></li> -->
+                        <li><a href="/our-approach.html">Our Approach</a></li>
+                        <li><a href="/industry-we-promote.html">Industry We Promote</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+                <div class="header-button">
+                  <a class="theme-btn" href="/contact-us.html">
+                    <span>
+                      Contact Us
+                      <i class="fa-solid fa-arrow-right-long"></i>
+                    </span>
+                  </a>
+                </div>
+                <div class="header__hamburger d-xl-block my-auto">
+                  <div class="sidebar__toggle">
+                    <i class="fas fa-bars"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/aboutus.html">About Us</a></li>
-                <li><a href="/our-approach.html">Our Approach</a></li>
-                <li><a href="/industry-we-promote.html">Industry We Promote</a></li>
-            </ul>
-        </nav>
-        <div class="clear"></div>
     </header>
 
     <!-- Search Area Start -->
@@ -324,22 +253,5 @@ nav ul li a:hover
         </div>
       </div>
     </div>
-
-    
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous">
-  </script>
-    <script type="text/javascript">
-        $(document).ready(function()
-        {
-            $('.mean-toggle').click(function()
-          {
-                $('.mean-toggle').toggleClass('active')
-                $('nav').toggleClass('active')
-          })
-        })
-      </script>
   </body>
 </html>
