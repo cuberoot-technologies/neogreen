@@ -3849,6 +3849,7 @@ span {
   text-align: center;
   background-color: var(--theme);
   color: var(--white);
+  border: 1px solid #1d8f2c;
   border-radius: 50%;
   transition: all 0.4s ease-in-out;
 }
@@ -4220,6 +4221,7 @@ span {
   background-color: var(--theme);
   padding: 8px 20px;
   line-height: 1;
+  border-radius: 6px;
   display: inline-block;
   letter-spacing: 1px;
   margin-bottom: 30px;
